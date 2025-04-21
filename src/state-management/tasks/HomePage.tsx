@@ -1,4 +1,5 @@
-import TaskList from './TaskList';
+import { Counter } from "../counter";
+import { TaskList } from "./index";
 
 const HomePage = () => {
   return <TaskList />;

@@ -1,27 +1,27 @@
-import { useState } from 'react';
-
-interface Task {
-  id: number;
-  title: string;
-}
+import { useAuth } from "../auth/index";
+import useAuthStore from "../auth/store";
+import useTasks from "./useTasks";
 
 const TaskList = () => {
-  const [tasks, setTasks] = useState<Task[]>([]);
+  const { tasks, dispatch } = useTasks();
+  // const { user } = useAuth();
+  const {user} = useAuthStore()
 
   return (
     <>
+      {user && <p>User: {user}</p>}
       <button
         onClick={() =>
-          setTasks([
-            { id: Date.now(), title: 'Task ' + Date.now() },
-            ...tasks,
-          ])
+          dispatch({
+            type: "ADD",
+            task: { id: Date.now(), title: "Task " + Date.now() },
+          })
         }
         className="btn btn-primary my-3"
       >
         Add Task
       </button>
-      <ul className="list-group">
+      <ul className="list-group mb-3">
         {tasks.map((task) => (
           <li
             key={task.id}
@@ -30,9 +30,7 @@ const TaskList = () => {
             <span className="flex-grow-1">{task.title}</span>
             <button
               className="btn btn-outline-danger"
-              onClick={() =>
-                setTasks(tasks.filter((t) => t.id !== task.id))
-              }
+              onClick={() => dispatch({ type: "DELETE", taskId: task.id })}
             >
               Delete
             </button>
