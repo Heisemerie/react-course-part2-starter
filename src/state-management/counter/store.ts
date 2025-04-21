@@ -16,7 +16,7 @@ const useCounterStore = create<CounterStore>((set) => ({
 }));
 
 // inspect zustand store in react devtools
-if (process.env.NODE_ENV === "development")
+if (process.env.NODE_ENV === "development") //process is a node object
   mountStoreDevtool("Counter Store", useCounterStore);
 
 export default useCounterStore;
