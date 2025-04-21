@@ -11,7 +11,7 @@ const NavBar = () => {
         <span className="badge text-bg-secondary">Tasks: {tasks.length}</span>
         {/* <span className="badge text-bg-secondary mx-3">Counter: {counter}</span> */}
       </span>
-      {/* <LoginStatus /> */}
+      <LoginStatus />
     </nav>
   );
 };
