@@ -3,7 +3,7 @@ import useAuth from "./useAuth";
 
 const LoginStatus = () => {
   // const { user, dispatch } = useAuth();
-  const { user, login, logout } = useAuthStore();
+  const { user, login, logout } = useAuthStore(); // working with Zustand
 
   if (user)
     return (

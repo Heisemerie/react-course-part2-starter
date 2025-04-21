@@ -5,7 +5,7 @@ import useTasks from "./useTasks";
 const TaskList = () => {
   const { tasks, dispatch } = useTasks();
   // const { user } = useAuth();
-  const {user} = useAuthStore()
+  const {user} = useAuthStore() //working with zustand
 
   return (
     <>
