@@ -12,29 +12,29 @@ import UsersPage from "./UsersPage";
 //route objects contain two properties; a path and an element to render at the path location
 const router = createBrowserRouter([
   //create a nested route to work with outlet
-  {
-    path: "/",
-    element: <Layout />,
-    errorElement: <ErrorPage />,
-    //renders children inside outlet component
-    children: [
-      { path: "", element: <HomePage /> },
-      { path: "login", element: <LoginPage /> },
-      { path: "contact", element: <ContactPage /> },
-    ],
-  },
+  // {
+  //   path: "/",
+  //   element: <Layout />,
+  //   errorElement: <ErrorPage />,
+  //   //renders children inside outlet component
+  //   children: [
+  //     { path: "", element: <HomePage /> },
+  //     { path: "login", element: <LoginPage /> },
+  //     { path: "contact", element: <ContactPage /> },
+  //   ],
+  // },
 
   // {
   //   element: <PrivateRoutes />,
   //   //renders children inside outlet component
   //   children: [
-  //     {
-  //       path: "users",
-  //       element: <UsersPage />,
-  //       children: [
-  //         { path: ":id", element: <UserDetail /> }, //passing data with route parameters
-  //       ],
-  //     },
+      {
+        path: "users",
+        element: <UsersPage />,
+        children: [
+          { path: ":id", element: <UserDetail /> }, //passing data with route parameters
+        ],
+      },
   //   ],
   // },
 ]);
