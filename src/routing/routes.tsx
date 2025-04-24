@@ -18,9 +18,9 @@ const router = createBrowserRouter([
   //   errorElement: <ErrorPage />,
   //   //renders children inside outlet component
   //   children: [
-      { path: "", element: <HomePage /> },
-      { path: "login", element: <LoginPage /> },
-      { path: "contact", element: <ContactPage /> },
+  //     { path: "", element: <HomePage /> },
+  //     { path: "login", element: <LoginPage /> },
+  //     { path: "contact", element: <ContactPage /> },
   //   ],
   // },
 
@@ -32,7 +32,7 @@ const router = createBrowserRouter([
   //       path: "users",
   //       element: <UsersPage />,
   //       children: [
-  //         { path: ":id", element: <UserDetail /> }, //passing data with route parameters
+          { path: ":id", element: <UserDetail /> }, //passing data with route parameters
   //       ],
   //     },
   //   ],
