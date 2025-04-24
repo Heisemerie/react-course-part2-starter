@@ -24,19 +24,19 @@ const router = createBrowserRouter([
     ],
   },
 
-  // {
-  //   element: <PrivateRoutes />,
-  //   //renders children inside outlet component
-  //   children: [
-  //     {
-  //       path: "users",
-  //       element: <UsersPage />,
-  //       children: [
-  //         { path: ":id", element: <UserDetail /> }, //passing data with route parameters
-  //       ],
-  //     },
-  //   ],
-  // },
+  {
+    element: <PrivateRoutes />, // is just a layout route to group routes for enforcing layout/business rules (doesn't need a path)
+    //renders children inside outlet component
+    children: [
+      {
+        path: "users",
+        element: <UsersPage />,
+        children: [
+          { path: ":id", element: <UserDetail /> }, //passing data with route parameters
+        ],
+      },
+    ],
+  },
 ]);
 
 export default router;
