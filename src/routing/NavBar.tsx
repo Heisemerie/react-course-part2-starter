@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 
 const NavBar = () => {
+  //use "Navlink" component to apply the active class to the active link
   return (
     <nav
       className="navbar navbar-expand-lg"
